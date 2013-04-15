@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost/development");
 
 var PersonSchema = {
     "name": String,
-    "age" : Number
+    "age" : Number,
 };
 
 var Person = mongoose.model("Person", PersonSchema);
@@ -33,6 +33,8 @@ Person.findOne({}, function (err, result) {
 app.configure(function () {
     // Define our static file directory, it will be 'public'                             
     app.use(express.static(path.join(__dirname, "public")));
+
+    // This allows us to parse the post requests data
     app.use(express.bodyParser());
 });
 

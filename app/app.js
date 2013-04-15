@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost/development");
 
 var PersonSchema = {
     "name": String,
-    "age" : Number,
+    "age" : Number
 };
 
 var Person = mongoose.model("Person", PersonSchema);

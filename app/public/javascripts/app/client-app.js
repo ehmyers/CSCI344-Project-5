@@ -28,8 +28,8 @@ var main = function () {
 			$.post("/todo", post_object, function (response) {
 				console.log(response);
 				addToDoToList(response);
-				$("#name").val("");
-				$("#categories").val("");
+				$("#todo_name").val("");
+				$("#todo_categories").val("");
 			});
 		}
 	});

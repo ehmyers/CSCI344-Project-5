@@ -1,53 +1,40 @@
 var main = function () {
-    console.log("hello world!");
+	console.log("hello world!");
 
-    var addPersonToList = function (person) {
-	$(".people_list").append("<p>"+person.name+" "+person.age+"</p>");
-    };
+	var addToDoToList = function (todo) {
+		$(".todo_list").append("<p>"+todo.name+" "+todo.categories+"</p>");
+	};
 
-    $.getJSON("/people.json", function (response) {
-	response.forEach(function(person) {
-	    console.log(person);
-	    addPersonToList(person);
-	    //$(".people_list").append("<p>"+person.name+" "+person.age+"</p>");
+	$.getJSON("/todos.json", function (response) {
+		response.forEach(function(todo) {
+			console.log(todo);
+			//addPersonToList(todo);
+			//$(".todo_list").append("<p>"+todo.name+" "+todo.categories+"</p>");
+		});
 	});
-    });
 
 
-    $("#new_person").click(function () {
+	$("#new_todo").click(function () {
 	var name = $("#name").val(),
-	    age = $("#age").val(),
-	    post_object = {};
+		categories = $("#categories").val(),
+		post_object = {};
 
-	if (name === "" || age === "") {
-	    alert("hey! you gotta put in an age and a name");
-	} else {
-	    post_object.name = name;
-	    post_object.age = age;
-	    console.log(post_object);
-
-	    $.post("/people/new", post_object, function (response) {
-		console.log(response);
-		addPersonToList(response);
-		$("#name").val("");
-		$("#age").val("");
-	    });
+	if (name === "" || categories === "") {
+		// alert("hey! you gotta put in a category and a name");
 	}
-    });
+	else {
+		post_object.name = name;
+		post_object.categories = categories;
+		console.log(post_object);
 
-
-
-
-
-    /*$.post("/people/new", { "name":"Sylvan", "age":20 }, function (response) {
-	console.log(response);
-
-	console.log("getting the json file a second time");
-	$.getJSON("/people.json", function (response) {
-	    console.log(response);
-	});	
-    });*/
-
+		$.post("/todo", post_object, function (response) {
+			console.log(response);
+			addToDoToList(response);
+			$("#name").val("");
+			$("#categories").val("");
+			});
+		}
+	});
 };
 
 $(document).ready(main);

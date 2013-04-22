@@ -1,0 +1,131 @@
+@background-color: #bdc3c7;
+@body-font: 'Sintony', sans-serif;
+@header-font: 'Ubuntu', sans-serif;
+@tab-color: #2980b9;
+@text-color: #222222;
+@text-size: 1.1em;
+
+@import url(http://fonts.googleapis.com/css?family=Sintony:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+/* general styles */
+body {
+  background: @background-color;
+  font-family: @body-font;
+  font-size: @text-size;
+  color: @text-color;
+  padding: 0px;
+  margin: 0px;
+}
+
+a, a:hover{
+  text-decoration: none;
+  color: @text-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-family: @header-font;
+  font-size: 1.5em;
+  padding-top: 20px;
+  margin: 0px;
+}
+
+p {
+  padding: 5px 0px;
+  margin: 0px;
+}
+
+/* content styles */
+
+#all_items {
+  margin-top: 10px;
+}
+
+.content {
+  padding: 40px 0px;
+  border-top: 0px;
+}
+
+.content .tab {
+  padding-left: 90px;
+  display: none; 
+}
+
+.content .active {
+  display: block;
+}
+
+/* user input styles */
+.input {
+  padding: 0px 10px;
+}
+
+label {
+  font-family: @header-font;
+  font-size: @text-size;
+  margin-top: 20px;
+}
+
+label, input {
+  display: inline-block;
+  padding-left: 5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  width: 215px;
+}
+
+.user_input {
+  font-size: @text-size;
+}
+
+/* tab styles */
+.tabs {
+  font-family: @header-font;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tabs .tab {
+  background: @tab-color;
+  color: #ecf0f1;
+  border: 2px solid @tab-color;
+  border-bottom-width: 0;
+  padding: 15px 40px;
+}
+
+.tabs .active {
+  background: #3498db;
+  border: 2px solid @tab-color;
+  border-bottom-width: 0;
+}
+
+/* miscellaneous styles */
+#categories {
+  font-size: .75em;
+  padding-left: 15px;
+}
+
+i {
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+/* makin' it jello! */
+.container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  
+.inner_container {
+  width: 700px;
+  min-height: 400px;
+  position: absolute;
+  margin-top: 50px;
+  background-color: #c9d0d6;
+  box-shadow: 2px 2px #aaaaaa;
+}

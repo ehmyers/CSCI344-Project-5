@@ -2,7 +2,8 @@
 @import url("http://fonts.googleapis.com/css?family=Ubuntu:400,500");
 
 body {
-  background:#bdc3c7;
+  /*background:#bdc3c7;*/
+  background-image: url("../../images/squairy_light.png");
   font-family:'Sintony', sans-serif;
   font-size:1.1em;
   color:#222;
@@ -15,26 +16,23 @@ a, a:hover {
   color:#222;
 }
 
-h1 {
-  text-align: center;
+#all_items {
+  margin-top:10px;
 }
 
-h2 {
-  font-family:'Ubuntu', sans-serif;
-  font-size:1.5em;
-  padding-top:20px;
-  margin:0px;
+#categories {
+  font-size:.75em;
+  padding-left:15px;
 }
 
-p {
-  padding:5px 0px;
-  margin:0px;
+.container {
+  width:700px;
+  margin-left:auto;
+  margin-right:auto;
 }
-
-#all_items { margin-top:10px; }
 
 .content {
-  padding:40px 0px;
+  padding:20px 0px;
   border-top:0px;
 }
 
@@ -43,14 +41,41 @@ p {
   display:none;
 }
 
-.content .active { display:block; }
+.content .active {
+  display: block;
+}
 
-.input { padding:0px 10px; }
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-family:'Ubuntu', sans-serif;
+  font-size:1.5em;
+  margin:0px;
+}
+
+i {
+  padding:0px 5px;
+  cursor:pointer;
+}
+
+.inner_container {
+  width:700px;
+  min-height:400px;
+  position:absolute;
+  margin-top:50px;
+  background-color: rgba(145, 187, 239, 0.3600);
+  box-shadow:1px 1px #aaa;
+}
+
+.input { 
+  padding:0px 10px;
+}
 
 label {
   font-family:'Ubuntu', sans-serif;
   font-size:1.1em;
-  margin-top:20px;
 }
 
 label, input {
@@ -61,7 +86,14 @@ label, input {
   width:215px;
 }
 
-.user_input { font-size:1.1em; }
+li {
+  list-style: none;
+}
+
+p {
+  padding:5px 0px;
+  margin:0px;
+}
 
 .tabs {
   font-family:'Ubuntu', sans-serif;
@@ -83,27 +115,11 @@ label, input {
   border-bottom-width:0;
 }
 
-#categories {
-  font-size:.75em;
-  padding-left:15px;
+.user_input {
+  font-size:1.1em;
 }
 
-i {
-  padding:0px 5px;
-  cursor:pointer;
-}
-
-.container {
-  width:700px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.inner_container {
-  width:700px;
-  min-height:400px;
-  position:absolute;
-  margin-top:50px;
-  background-color:#c9d0d6;
-  box-shadow:2px 2px #aaa;
-}
+/*ul {
+  padding: 0px;
+  margin: 0px;
+}*/

@@ -21,7 +21,12 @@
         <div class="content">
           <ul>
           <% for (var i = 0; i < todos.length; i++) { %>
-            <li><%= todos[i].name %>
+            <li>
+              <p>
+                <i class="icon-remove"></i>
+                <%= todos[i].name %>
+                <span id="categories"><%= todos[i].categories %></span>
+              </p>
           <% } %>
         </div>
 

@@ -37,7 +37,7 @@ var main = function () {
 	// submits form on enter key
     function submitOnEnter(e) {
         if (e.keyCode === 13) {    // 13 is the enter key
-            $(".user_input_button").click();
+            $("#new_todo").click();
         }
     }
 };

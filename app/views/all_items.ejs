@@ -22,11 +22,10 @@
           <ul>
           <% for (var i = 0; i < todos.length; i++) { %>
             <li>
-              <p>
-                <i class="icon-remove"></i>
-                <span class="todo_name"><%= todos[i].name %></span>
-                <span id="categories"><%= todos[i].categories %></span>
-              </p>
+              <i class="icon-remove"></i>
+              <span class="todo_name"><%= todos[i].name %></span>
+              <span id="categories"><%= todos[i].categories %></span>
+            </li>
           <% } %>
         </div>
 

@@ -20,10 +20,13 @@
 
         <div class="content">
           <% for (var category in categories) { %>
+            <h2><%= category %></h2>
             <ul>
-              <h2><%= category %></h2>
               <% categories[category].forEach(function(todo) { %>
-                <p><li><i class="icon-remove"></i><%= todo %></p>
+                  <li>
+                    <i class="icon-remove"></i>
+                    <span class="todo_name"><%= todo %></span>
+                  </li>
               <% }); %>
             </ul>
           <% } %>

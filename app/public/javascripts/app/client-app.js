@@ -15,14 +15,22 @@ var main = function () {
     $("#new_todo").click(function () {
         var name = $("#todo_name").val(),
         categories = $("#todo_categories").val(),
+        categoryKnapsack = [],
         post_object = {};
+
+        // splits the list into separate strings based on spaces
+        categories.split(",").map(function (element) {
+            // removes the spaces and adds to knapsack
+            categoryKnapsack.push(element.trim());
+            console.log(categoryKnapsack);
+        });
 
         if (name === "" || categories === "") {
             alert("The new to-do item must have a name and at least one category.");
         }
         else {
             post_object.name = name;
-            post_object.categories = categories;
+            post_object.categories = categoryKnapsack;
             console.log(post_object);
 
             $.post("/todo", post_object, function (response) {
@@ -46,12 +54,11 @@ var main = function () {
         // console.log("You clicked a remove button!");
         var currentItem = $(this).parent().children(".todo_name");
         var currentItemHtml = currentItem.html();
-        console.log(currentItem);
         $.ajax("/todo/" + currentItemHtml, {
             "type": "DELETE",
             "success": function(data, textStatus) {
-                console.log("Success data, BITCH: " + data);
-                currentItem.parent().parent().fadeOut();
+                console.log("Success data: " + data);
+                currentItem.parent().fadeOut();
             }
         });
     });

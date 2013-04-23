@@ -40,6 +40,16 @@ var main = function () {
             $("#new_todo").click();
         }
     }
+
+    // removes the todo on click
+    $(".icon-remove").click(function () {
+        console.log("You clicked a remove button!");
+        // gets the parent
+        var currentItem = $(this).parent();
+        $.ajax("/todo", currentItem, function() {
+        	// wat
+        });
+    });
 };
 
 $(document).ready(main);

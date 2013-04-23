@@ -35,4 +35,4 @@ app.get("/todos", todoController.list);
 app.get("/todos/categories", todoController.categoryList);
 
 app.post("/todo", todoController.create);
-app.delete("/todo", todoController.destroy);
+app.delete("/todo/:todo", todoController.destroy);

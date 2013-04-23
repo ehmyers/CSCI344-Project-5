@@ -42,23 +42,25 @@ ToDoController.createForm = function (req, res) {
 };
 
 ToDoController.destroy = function (req, res) {
-    ToDo.findOne({"name":req.body.name}, function (err, todo) {
+    ToDo.findOne({"name":req.params.todo}, function (err, todo) {
         if (err !== null) {
-            //handle err
+            console.log(err);
+            res.send("there was an error, yo");
         }
         else if (todo === null) {
-            //person not found
+            console.log("To-do not found");
+            res.send("to do wasn't found");
         }
         else {
             todo.remove(function (err) {
                 if (err !== null) {
-                    //handle err
+                    console.log(err);
                 }
+                res.send("was deleted.");
             });
         }
     });
 };
-
 
 ToDoController.index = function (req, res) {
     res.redirect("/todos");

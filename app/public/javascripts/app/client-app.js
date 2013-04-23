@@ -59,6 +59,9 @@ var main = function () {
             "success": function(data, textStatus) {
                 console.log("Success data: " + data);
                 currentItem.parent().fadeOut();
+                if (currentItem.parent().parent().children() === "") {
+                    currentItem.parent().parent().fadeOut;
+                }
             }
         });
     });

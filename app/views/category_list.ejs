@@ -20,15 +20,17 @@
 
         <div class="content">
           <% for (var category in categories) { %>
-            <h2><%= category %></h2>
-            <ul>
-              <% categories[category].forEach(function(todo) { %>
-                  <li>
-                    <i class="icon-remove"></i>
-                    <span class="todo_name"><%= todo %></span>
-                  </li>
-              <% }); %>
-            </ul>
+            <div class="one_category_area">
+              <h2><%= category %></h2>
+              <ul>
+                <% categories[category].forEach(function(todo) { %>
+                    <li>
+                      <i class="icon-remove"></i>
+                      <span class="todo_name"><%= todo %></span>
+                    </li>
+                <% }); %>
+              </ul>
+            </div>
           <% } %>
         </div>
 

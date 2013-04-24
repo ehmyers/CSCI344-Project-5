@@ -58,9 +58,13 @@ var main = function () {
             "type": "DELETE",
             "success": function(data, textStatus) {
                 console.log("Success data: " + data);
-                currentItem.parent().fadeOut();
-                if (currentItem.parent().parent().children() === "") {
-                    currentItem.parent().parent().fadeOut;
+                if (currentItem.closest("ul").children().length === 1) {
+                    console.log("deleting tha whole biz");
+                    console.log(currentItem.closest(".one_category_area"));
+                    currentItem.closest(".one_category_area").fadeOut();
+                } else {
+                    console.log("deleting napzack");
+                    currentItem.parent().fadeOut();
                 }
             }
         });
